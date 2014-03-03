@@ -1,0 +1,11 @@
+if (0) then
+    a = 2;
+    b = 3
+else
+    a = 1;
+    b = 2
+endif;
+
+
+output a;
+output b;

@@ -1,0 +1,11 @@
+a = 1;
+b = 0;
+i = 0;
+
+while (5-i) do
+    a = b+a;
+    b = a+b;
+    output a;
+    output b;
+    i = i+1
+done;
