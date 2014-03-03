@@ -4,9 +4,6 @@ import parser.expressions.Expr;
 import parser.NameSpace;
 import parser.StatementSeq;
 
-/**
- * Created by erb on 3/3/14.
- */
 public class IfStatement extends Statement {
     Expr condition;
     StatementSeq ifStmtSeq;
@@ -25,5 +22,18 @@ public class IfStatement extends Statement {
         } else {
             elseStmtSeq.execute(ns);
         }
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("if ")
+                .append(condition)
+                .append(" do\n")
+                .append(indent(ifStmtSeq.toString()))
+                .append("else\n")
+                .append(indent(elseStmtSeq.toString()))
+                .append("endif");
+        return sb.toString();
     }
 }

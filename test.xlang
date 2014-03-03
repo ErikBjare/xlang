@@ -1,9 +1,17 @@
+b = 3;
+
 if (0) then
-    a = 2;
-    b = 3
+    a = 2
 else
-    a = 1;
-    b = 2
+    if (1+2) then
+        a = 1+2*(5+6)+(5*3)-(4/(1+1+(1+1)));
+        while b do
+            b = b-1
+        done
+    else
+        a = 0;
+        b = 0
+    endif
 endif;
 
 

@@ -4,9 +4,6 @@ import parser.NameSpace;
 import parser.StatementSeq;
 import parser.expressions.Expr;
 
-/**
- * Created by erb on 3/3/14.
- */
 public class WhileStatement extends Statement {
     Expr condition;
     StatementSeq stmtSeq;
@@ -21,5 +18,10 @@ public class WhileStatement extends Statement {
         while(condition.value(ns) != 0) {
             stmtSeq.execute(ns);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "while " + condition + " do\n" + indent(stmtSeq.toString()) + "done";
     }
 }

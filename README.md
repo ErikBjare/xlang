@@ -3,6 +3,13 @@ xlang
 
 Very simplistic programming language implemented in Java
 
+## Language specification
+ - Can only handle numbers
+ - In conditional statements 0 represents false and all others values are considered true
+ - Shift down indentation level by skipping trailing `;`
+ - The only operators are `+`, `-`, `*` and `/`
+ - Variable names must start with a letter but can contain numbers
+
 ## Syntax
 On Backus-Naur Form:
 
@@ -22,8 +29,7 @@ On Backus-Naur Form:
     <var> ::= <letter> {<letter> | <digit>}<letter> ::= a | b | ... | z | A | B | ... | Z
 
 
-### Examples
-
+## Examples
 Example of a program calculating the fibonacci sequence:
 
     a = 1;

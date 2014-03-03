@@ -23,4 +23,16 @@ public class OutputStatement extends Statement {
             System.out.println(ns.get(varname).value(ns));
         }
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("output ");
+        if(expr != null) {
+            sb.append(expr);
+        } else {
+            sb.append(varname);
+        }
+        return sb.toString();
+    }
 }

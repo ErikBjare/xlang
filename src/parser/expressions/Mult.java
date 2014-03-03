@@ -13,4 +13,17 @@ public class Mult extends Expr{
 	public int value(NameSpace np) {
 		return expr1.value(np) * expr2.value(np);
 	}
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+
+        if(expr1 instanceof Add || expr1 instanceof Sub) sb.append("(").append(expr1).append(")");
+        else sb.append(expr1);
+        sb.append("*");
+        if(expr2 instanceof Add || expr2 instanceof Sub) sb.append("(").append(expr2).append(")");
+        else sb.append(expr2);
+
+        return sb.toString();
+    }
 }

@@ -7,4 +7,6 @@ public abstract class Expr {
 		/** Ber�kna v�rdet av uttrycket
          * @param np*/
 		public abstract int value(NameSpace np);
+
+        public abstract String toString();
 }

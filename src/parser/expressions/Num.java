@@ -12,4 +12,9 @@ public class Num extends Expr {
 	public int value(NameSpace np) {
 		return value;
 	}
+
+    @Override
+    public String toString() {
+        return Integer.toString(value);
+    }
 }

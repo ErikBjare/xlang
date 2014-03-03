@@ -13,4 +13,15 @@ public class Add extends Expr  {
 	public int value(NameSpace np) {
 		return expr1.value(np) + expr2.value(np);
 	}
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(expr1);
+        sb.append("+");
+        sb.append(expr2);
+
+        return sb.toString();
+    }
 }

@@ -26,4 +26,9 @@ public class Var extends Expr {
     public int value(NameSpace ns) {
         return ns.get(name).val;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }

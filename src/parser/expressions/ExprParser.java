@@ -3,19 +3,16 @@ package parser.expressions;
 import parser.Tokenizer;
 
 public class ExprParser {
-	private Tokenizer theTokenizer; // anv�nds f�r att h�mta token fr�n input
+	private Tokenizer theTokenizer;
 
-	/** Konstruktor. Skapar en uttrycksparser knuten till en Tokenizer t */
 	public ExprParser(Tokenizer t) {
 		theTokenizer = t;
 	}
 
-	/** Returnerar ett uttryckstr�d som representerar det uttryck som parsras */
 	public Expr build() {
 		return expr();
 	}
 
-	/* Metod som motsvarar startproduktionen */
 	private Expr expr() {
 		Expr res, nextTerm;	res = term();
 		while (theTokenizer.ttype == '+' || theTokenizer.ttype == '-') {
@@ -30,8 +27,7 @@ public class ExprParser {
 		}
 		return res;
 	}
-	
-	/* Metod motsvarande term-produktionen */
+
 	private Expr term() {
 		Expr res, nextFactor;
 		res = factor();
@@ -47,8 +43,7 @@ public class ExprParser {
 		}
 		return res;
 	}
-	
-	/* Metod motsvarande factor-produktionen. */
+
 	private Expr factor() {
 		if (theTokenizer.ttype == '(') {
 			theTokenizer.next();

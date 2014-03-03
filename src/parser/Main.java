@@ -1,15 +1,10 @@
 package parser;
 
-import com.sun.corba.se.impl.presentation.rmi.DynamicMethodMarshallerImpl;
-import parser.expressions.Expr;
-import parser.expressions.ExprParser;
-
 import java.io.*;
 import java.util.Scanner;
 
 public class Main {
-	public static void main(String[] args) { 
-		Reader reader = null;
+	public static void main(String[] args) {
 		if (args.length==0) {
             run_interactive();
 		} else {
@@ -47,6 +42,8 @@ public class Main {
         theTokenizer.next();
         StatementParser parser = new StatementParser(theTokenizer);
         StatementSeq stmtSeq = parser.build();
+        stmtSeq.print();
         stmtSeq.execute();
+
     }
 }

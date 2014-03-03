@@ -22,4 +22,9 @@ public class AssignStatement extends Statement {
             ns.put(name, v);
         }
     }
+
+    @Override
+    public String toString() {
+        return name + " = " + to_assign;
+    }
 }

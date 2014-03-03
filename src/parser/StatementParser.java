@@ -6,20 +6,15 @@ import parser.statements.*;
 
 import java.io.StreamTokenizer;
 
-/**
- * Created by erb on 3/3/14.
- */
 public class StatementParser {
-    private Tokenizer theTokenizer; // anv�nds f�r att h�mta token fr�n input
+    private Tokenizer theTokenizer;
     private ExprParser exprParser;
 
-    /** Konstruktor. Skapar en uttrycksparser knuten till en Tokenizer t */
     public StatementParser(Tokenizer t) {
         theTokenizer = t;
         exprParser = new ExprParser(t);
     }
 
-    /** Returnerar ett uttryckstr�d som representerar det uttryck som parsras */
     public StatementSeq build() {
         return stmtSeq();
     }
@@ -28,13 +23,7 @@ public class StatementParser {
         StatementSeq seq = new StatementSeq();
         while(!theTokenizer.atEOF()) {
             seq.add(stmt());
-            try {
-                assert theTokenizer.ttype == ';';
-            } catch(AssertionError e) {
-                break;
-                //System.err.println("Expected a ';' but instead ttype " + theTokenizer.ttype + " was found!\nExiting...");
-                //throw e;
-            }
+            if(theTokenizer.ttype != ';') break;
             theTokenizer.next();
         }
         return seq;
