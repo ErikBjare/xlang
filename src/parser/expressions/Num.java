@@ -9,7 +9,12 @@ public class Num extends Expr {
 		value = v;
 	}
 
-	public int value(NameSpace np) {
+    /**
+     * Evaluates expression (lazy evaluation)
+     * @param ns Namespace to evaluate expression in
+     * @return Value of expression
+     */
+	public int value(NameSpace ns) {
 		return value;
 	}
 

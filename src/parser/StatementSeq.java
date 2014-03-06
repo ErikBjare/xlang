@@ -13,14 +13,25 @@ public class StatementSeq extends Statement {
         ns = new NameSpace();
     }
 
+    /**
+     * Adds statement to StatementSeq
+     * @param stmt Statement to add
+     */
     public void add(Statement stmt) {
         seq.add(stmt);
     }
 
+    /**
+     * Prints code-equivalent of StatementSeq
+     */
     public void print() {
         System.out.println(toString());
     }
 
+    /**
+     * Returns code-equivalent of StatementSeq
+     * @return Code-equivalent of StatementSeq
+     */
     public String toString() {
         StringBuilder sb = new StringBuilder();
         int i = 0;
@@ -34,6 +45,9 @@ public class StatementSeq extends Statement {
         return sb.toString();
     }
 
+    /**
+     * Executes statement-sequence in new NameSpace
+     */
     public void execute() {
         execute(ns);
 
@@ -41,10 +55,10 @@ public class StatementSeq extends Statement {
         ns.print();
     }
 
-    public void execute(Statement stmt) {
-        stmt.execute(ns);
-    }
-
+    /**
+     * Executes statement-sequence in given NameSpace
+     * @param ns NameSpace to execute statement in
+     */
     @Override
     public void execute(NameSpace ns) {
         for(Statement s : seq) {

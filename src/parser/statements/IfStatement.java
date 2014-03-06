@@ -15,6 +15,10 @@ public class IfStatement extends Statement {
         this.elseStmtSeq = elseStmtSeq;
     }
 
+    /**
+     * Executes statement
+     * @param ns NameSpace to execute statement in
+     */
     @Override
     public void execute(NameSpace ns) {
         if(condition.value(ns) != 0) {
@@ -24,6 +28,10 @@ public class IfStatement extends Statement {
         }
     }
 
+    /**
+     * Code-representation of the statement
+     * @return code-equivalent of statement
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

@@ -12,6 +12,9 @@ public class Main {
         }
 	}
 
+    /**
+     * Enables the user to enter a program manually or by piping to the stdin
+     */
     public static void run_interactive() {
         StringBuilder sb = new StringBuilder();
         Scanner scan = new Scanner(System.in);
@@ -30,6 +33,9 @@ public class Main {
         stmtSeq.execute();
     }
 
+    /**
+     * Runs a program from file
+     */
     public static void run_file(String filepath) {
         Reader reader = null;
         try {

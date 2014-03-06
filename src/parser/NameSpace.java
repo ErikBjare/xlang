@@ -10,6 +10,9 @@ public class NameSpace extends HashMap<String, Var> {
         super();
     }
 
+    /**
+     * Prints contents of namespace
+     */
     public void print() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");

@@ -10,8 +10,13 @@ public class Div extends Expr {
 		expr2 = e2;
 	}
 
-	public int value(NameSpace np) {
-		return expr1.value(np) / expr2.value(np);
+    /**
+     * Evaluates expression (lazy evaluation)
+     * @param ns Namespace to evaluate expression in
+     * @return Value of expression
+     */
+	public int value(NameSpace ns) {
+		return expr1.value(ns) / expr2.value(ns);
 	}
 
     @Override

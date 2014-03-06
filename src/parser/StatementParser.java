@@ -2,6 +2,7 @@ package parser;
 
 import parser.expressions.Expr;
 import parser.expressions.ExprParser;
+import parser.expressions.Var;
 import parser.statements.*;
 
 import java.io.StreamTokenizer;
@@ -15,6 +16,10 @@ public class StatementParser {
         exprParser = new ExprParser(t);
     }
 
+    /**
+     * Builds statement sequence until indentationlevel is shifted down one level or EOF is reached
+     * @return StatementSeq
+     */
     public StatementSeq build() {
         return stmtSeq();
     }
@@ -56,12 +61,10 @@ public class StatementParser {
 
     private OutputStatement outputStmt() {
         theTokenizer.next();
-        //System.out.println(theTokenizer.ttype);
-        //System.out.println(theTokenizer.sval);
         if(theTokenizer.ttype == Tokenizer.TT_WORD) {
             String name = theTokenizer.sval;
             theTokenizer.next();
-            return new OutputStatement(name);
+            return new OutputStatement(new Var(name));
         } else {
             return new OutputStatement(exprParser.build());
         }

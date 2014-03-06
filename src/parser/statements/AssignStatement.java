@@ -13,6 +13,10 @@ public class AssignStatement extends Statement {
         this.to_assign = to_assign;
     }
 
+    /**
+     * Executes statement
+     * @param ns NameSpace to execute statement in
+     */
     @Override
     public void execute(NameSpace ns) {
         if(ns.containsKey(name)) {
@@ -23,6 +27,10 @@ public class AssignStatement extends Statement {
         }
     }
 
+    /**
+     * Code-representation of the statement
+     * @return code-equivalent of statement
+     */
     @Override
     public String toString() {
         return name + " = " + to_assign;

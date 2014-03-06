@@ -11,19 +11,19 @@ public class OutputStatement extends Statement {
         this.expr = e;
     }
 
-    public OutputStatement(String varname) {
-        this.varname = varname;
-    }
-
+    /**
+     * Executes statement
+     * @param ns NameSpace to execute statement in
+     */
     @Override
     public void execute(NameSpace ns) {
-        if(expr != null) {
-            System.out.println(Integer.toString(expr.value(ns)));
-        } else {
-            System.out.println(ns.get(varname).value(ns));
-        }
+        System.out.println(Integer.toString(expr.value(ns)));
     }
 
+    /**
+     * Returns code-equivalent of the statement
+     * @return Code-equivalent of statement
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

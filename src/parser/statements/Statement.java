@@ -7,11 +7,19 @@ import parser.NameSpace;
  */
 public abstract class Statement {
 
+    /**
+     * Executes statement
+     * @param ns NameSpace to execute statement in
+     */
     public abstract void execute(NameSpace ns);
 
+    /**
+     * Code-representation of the statement
+     * @return code-equivalent of statement
+     */
     public abstract String toString();
 
-    public static String indent(String str) {
+    protected static String indent(String str) {
         StringBuilder sb = new StringBuilder();
         String[] ss = str.split("\n");
         for(String s : ss) {
