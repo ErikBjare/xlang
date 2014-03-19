@@ -61,13 +61,13 @@ public class StatementParser {
 
     private OutputStatement outputStmt() {
         theTokenizer.next();
-        if(theTokenizer.ttype == Tokenizer.TT_WORD) {
+        /**if(theTokenizer.ttype == Tokenizer.TT_WORD) {
             String name = theTokenizer.sval;
             theTokenizer.next();
             return new OutputStatement(new Var(name));
-        } else {
+        } else {*/
             return new OutputStatement(exprParser.build());
-        }
+        //}
     }
 
     private IfStatement ifStmt() {

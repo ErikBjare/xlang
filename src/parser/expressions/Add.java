@@ -6,6 +6,7 @@ public class Add extends Expr  {
 	private Expr expr1, expr2;
 
 	Add(Expr e1, Expr e2) {
+        super(1);
 		expr1 = e1;
 		expr2 = e2;
 	}
@@ -21,12 +22,6 @@ public class Add extends Expr  {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-
-        sb.append(expr1);
-        sb.append("+");
-        sb.append(expr2);
-
-        return sb.toString();
+        return toStringPrecedence("+", expr1, expr2);
     }
 }

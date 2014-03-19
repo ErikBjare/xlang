@@ -10,11 +10,13 @@ public class Var extends Expr {
     int val;
 
     public Var(String name, int val) {
+        super(255);
         this.name = name;
         this.val = val;
     }
 
     public Var(String name) {
+        super(255);
         this.name = name;
     }
 

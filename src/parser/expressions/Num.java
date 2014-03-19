@@ -6,6 +6,7 @@ public class Num extends Expr {
 	private int value;
 
 	public Num(int v) {
+        super(255);
 		value = v;
 	}
 
