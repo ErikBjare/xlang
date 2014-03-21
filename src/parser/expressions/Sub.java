@@ -21,7 +21,9 @@ public class Sub extends Expr {
 	}
 
     @Override
-    public String toString() {
-        return toStringPrecedence("-", expr1, expr2);
+    public String unparse(int prec) {
+        String s = expr1.unparse(precedence-1) + "-" + expr2.unparse(precedence+1);
+        if(prec >= precedence) s = "(" + s + ")";
+        return s;
     }
 }

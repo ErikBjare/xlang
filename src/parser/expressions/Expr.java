@@ -17,23 +17,9 @@ public abstract class Expr {
      */
     public abstract int value(NameSpace ns);
 
-    public abstract String toString();
+    public abstract String unparse(int prec);
 
-    protected String toStringPrecedence(String op, Expr expr1, Expr expr2) {
-        StringBuilder sb = new StringBuilder();
-
-        //System.out.println(expr1.precedence + " " + precedence + " " + expr2.precedence);
-        if (expr1.precedence < precedence) {
-            sb.append("(").append(expr1).append(")");
-        } else {
-            sb.append(expr1);
-        }
-        sb.append(op);
-        if (expr2.precedence < precedence) {
-            sb.append("(").append(expr2).append(")");
-        } else {
-            sb.append(expr2);
-        }
-        return sb.toString();
+    public String toString() {
+        return unparse(0);
     }
 }

@@ -20,6 +20,11 @@ public class Num extends Expr {
 	}
 
     @Override
+    public String unparse(int prec) {
+        return toString();
+    }
+
+    @Override
     public String toString() {
         return Integer.toString(value);
     }

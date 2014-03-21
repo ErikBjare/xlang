@@ -6,7 +6,7 @@ public class Mult extends Expr{
 	private Expr expr1, expr2;
 
 	Mult(Expr e1, Expr e2) {
-        super(3);
+        super(4);
 		expr1 = e1;
 		expr2 = e2;
 	}
@@ -21,7 +21,9 @@ public class Mult extends Expr{
 	}
 
     @Override
-    public String toString() {
-        return toStringPrecedence("*", expr1, expr2);
+    public String unparse(int prec) {
+        String s = expr1.unparse(precedence-1) + "*" + expr2.unparse(precedence);
+        if(prec > precedence) s = "(" + s + ")";
+        return s;
     }
 }

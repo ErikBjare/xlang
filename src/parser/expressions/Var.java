@@ -24,6 +24,11 @@ public class Var extends Expr {
         ns.get(name).val = val;
     }
 
+    @Override
+    public String unparse(int prec) {
+        return name;
+    }
+
     /**
      * Evaluates expression (lazy evaluation)
      * @param ns Namespace to evaluate expression in
@@ -32,10 +37,5 @@ public class Var extends Expr {
     @Override
     public int value(NameSpace ns) {
         return ns.get(name).val;
-    }
-
-    @Override
-    public String toString() {
-        return name;
     }
 }
